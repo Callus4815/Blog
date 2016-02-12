@@ -5,14 +5,14 @@
 {% block blog_entries %}
 {% for object in object_list %}
 
- <div   style="text-align: center;" class="row post" >
-<div class="col-md-6 col-md-offset-3" style="border: 2px solid red; border-radius: 25px">
-    <a  href="{% url 'entry_detail' slug=object.slug %}" class="thumbnail">{{ object.title }}</a></h2>
+ <div   style="text-align: center; background:orange;" class="row" >
+<div class="col-md-6 col-md-offset-3" style="border: 2px solid red; border-radius: 25px; background:black;">
+    <h2><a  href="{% url 'entry_detail' slug=object.slug %}">{{ object.title }}</a></h2>
     <p  class="meta">{{ object.created }}</p>
-    <span>{{ object.body|markdown }}</span>
+    <span style="color: white;">{{ object.body|markdown }}</span>
   </div>
 </div>
-<br/>
+
 
 
 {% endfor %}
