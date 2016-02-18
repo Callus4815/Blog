@@ -1,17 +1,11 @@
 {% extends "base.html" %}
 {% load django_markdown %}
-<head>
-<style>
-html {
-	background-color: orange !important;
-}
-</style>
-</head>
+
 <body>
 {% block blog_entries %}
 
   <div   style="text-align: center; background:orange;" class="row" >
-<div class="col-md-6 col-md-offset-3" style="border: 2px solid red; border-radius: 25px; background:black;">
+<div class="col-md-6 col-md-offset-3" style="border: 2px solid red; border-radius: 25px; background:black; padding-bottom:25px;">
     <h2><a  href="{% url 'entry_detail' slug=object.slug %}">{{ object.title }}</a></h2>
     <p  class="meta">{{ object.created }}</p>
     <span style="color: white;">{{ object.body|markdown }}</span>
